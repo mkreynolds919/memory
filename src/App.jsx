@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'; 
+import Scoreboard from "./Scoreboard.jsx";
 
 export default function App() {
   const [score, setScore] = useState(0);
@@ -45,5 +46,12 @@ export default function App() {
 
     loadData();
   }, []);
+
+  return (
+    <div className="app-container">
+      <div className="header">Memory Game</div>
+      <Scoreboard score={score} bestScore={bestScore}></Scoreboard>
+    </div>
+  );
   
 }
