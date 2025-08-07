@@ -1,5 +1,6 @@
 import Card from "./Card.jsx";
 import { useState } from 'react';
+import "../styles/MemoryGame.css";
 
 export default function MemoryGame({ data, score, bestScore, setScore, setBestScore, resetData }) {
     const [seen, setSeen] = useState({});

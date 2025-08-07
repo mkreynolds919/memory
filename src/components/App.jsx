@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'; 
 import Scoreboard from "./Scoreboard.jsx";
 import MemoryGame from "./MemoryGame.jsx";
+import "../styles/App.css";
 
 export default function App() {
   const [score, setScore] = useState(0);

@@ -1,4 +1,4 @@
-
+import "../styles/Card.css";
 
 export default function Card({ name, sprite, handleSelection }) {
     return (
