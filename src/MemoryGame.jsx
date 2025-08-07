@@ -1,4 +1,4 @@
-
+import Card from "./Card.jsx";
 
 export default function MemoryGame({ data, setData, setScore, setBestScore }) {
     return (
