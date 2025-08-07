@@ -1,8 +1,8 @@
 
 
-export default function Card({ name, sprite }) {
+export default function Card({ name, sprite, handleSelection }) {
     return (
-        <div className="card">
+        <div className="card" onClick={handleSelection}>
             <div className="img-container">
                 <img className="poke-img" src={sprite}></img>
             </div>

@@ -1,10 +1,29 @@
 import Card from "./Card.jsx";
+import { useState } from 'react';
 
-export default function MemoryGame({ data, setData, setScore, setBestScore }) {
+export default function MemoryGame({ data, score, bestScore, setScore, setBestScore, resetData }) {
+    const [seen, setSeen] = useState({});
+
+    function handleSelection(name) {
+        if (seen[name]) {
+            if (score > bestScore) {
+                setBestScore(score);
+            }
+            setSeen({});
+            setScore(0);
+            resetData();
+        } else {
+            setSeen({ ...seen, [name]: true});
+            console.log(seen);
+            setScore((prev) => prev + 1);
+            resetData();
+        }
+    }
+
     return (
         <div className="game-container">
             {data.map(poke => {
-                <Card key={poke.name} name={poke.name} sprite={poke.sprite} onClick={() => handleSelection(poke.name)}></Card>
+                return <Card key={poke.name} name={poke.name} sprite={poke.sprite} handleSelection={() => handleSelection(poke.name)}></Card>
             })}
         </div>
     )

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'; 
 import Scoreboard from "./Scoreboard.jsx";
+import MemoryGame from "./MemoryGame.jsx";
 
 export default function App() {
   const [score, setScore] = useState(0);
@@ -33,6 +34,10 @@ export default function App() {
     return array;
   }
 
+  function resetData() {
+    setData(shuffle([...data]));
+  }
+
   useEffect(() => {
     const names = ["charizard", "gengar", "gardevoir", "umbreon", "lucario", "rayquaza", "metagross", "flygon", "bulbasaur", "swampert", "garchomp", "tyranitar"];
     const loadData = async () => {
@@ -51,7 +56,7 @@ export default function App() {
     <div className="app-container">
       <div className="header">Memory Game</div>
       <Scoreboard score={score} bestScore={bestScore}></Scoreboard>
-      <MemoryGame data={data} setData={setData} setScore={setScore} setBestScore={setBestScore}></MemoryGame>
+      <MemoryGame data={data} score={score} bestScore={bestScore} setScore={setScore} setBestScore={setBestScore} resetData={resetData}></MemoryGame>
     </div>
   );
   
