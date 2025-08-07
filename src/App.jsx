@@ -51,6 +51,7 @@ export default function App() {
     <div className="app-container">
       <div className="header">Memory Game</div>
       <Scoreboard score={score} bestScore={bestScore}></Scoreboard>
+      <MemoryGame data={data} setData={setData} setScore={setScore} setBestScore={setBestScore}></MemoryGame>
     </div>
   );
   
