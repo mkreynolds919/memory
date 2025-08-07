@@ -1,0 +1,23 @@
+
+.header {
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    font-family: 'Pokemon';
+    color: white;
+}
+
+.scoreboard-container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-self: last baseline;
+    margin-right: 2rem;
+}
+
+.score, .best-score {
+    font-size: 30px;
+    font-family: 'Pokemon';
+    color: white;
+}
